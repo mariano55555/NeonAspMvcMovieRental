@@ -10,6 +10,7 @@ namespace Neon.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Neon.Models.NeonContext context)
