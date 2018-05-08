@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -9,8 +10,23 @@ namespace Neon.Controllers
 {
     public class MoviesController : Controller
     {
-        // GET: Movies
-        public ActionResult Random()
+
+    private NeonContext _context;
+
+    public MoviesController()
+    {
+       _context = new NeonContext();
+    }
+
+     protected override void Dispose(bool disposing)
+    {
+         _context.Dispose();
+    }
+
+
+
+    // GET: Movies
+    public ActionResult Random()
         {
             var movie = new Movie() { Name = "shrek" };
 
@@ -19,17 +35,19 @@ namespace Neon.Controllers
 
         public ViewResult Index()
         {
-            var movies = GetMovies();
+            //var movies = GetMovies();
+            var movies = _context.Movies.Include(m => m.Genre).ToList();
             return View(movies);
         }
 
         public ActionResult Show(int id)
         {
-            var customer = GetMovies().FirstOrDefault(c => c.Id == id);
-            if (customer == null)
+            //var customer = GetMovies().FirstOrDefault(c => c.Id == id);
+            var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
+            if (movie == null)
                 return HttpNotFound();
 
-            return View(customer);
+            return View(movie);
         }
 
         private IEnumerable<Movie> GetMovies()

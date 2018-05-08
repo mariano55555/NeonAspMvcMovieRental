@@ -227,8 +227,33 @@
     <Compile Include="Migrations\201805042205038_SetNameOfMembershipTypes.Designer.cs">
       <DependentUpon>201805042205038_SetNameOfMembershipTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805081558524_AddBirthdateToCustomer.cs" />
+    <Compile Include="Migrations\201805081558524_AddBirthdateToCustomer.Designer.cs">
+      <DependentUpon>201805081558524_AddBirthdateToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805081612582_UpdateMembershipType.cs" />
+    <Compile Include="Migrations\201805081612582_UpdateMembershipType.Designer.cs">
+      <DependentUpon>201805081612582_UpdateMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805081650089_UpdateMovieAddGenre.cs" />
+    <Compile Include="Migrations\201805081650089_UpdateMovieAddGenre.Designer.cs">
+      <DependentUpon>201805081650089_UpdateMovieAddGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805081703183_UpdateIntForByteInIdTables.cs" />
+    <Compile Include="Migrations\201805081703183_UpdateIntForByteInIdTables.Designer.cs">
+      <DependentUpon>201805081703183_UpdateIntForByteInIdTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805081704007_Genre.cs" />
+    <Compile Include="Migrations\201805081704007_Genre.Designer.cs">
+      <DependentUpon>201805081704007_Genre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805081709415_InsertMovies.cs" />
+    <Compile Include="Migrations\201805081709415_InsertMovies.Designer.cs">
+      <DependentUpon>201805081709415_InsertMovies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\NeonContext.cs" />
@@ -318,6 +343,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805042205038_SetNameOfMembershipTypes.resx">
       <DependentUpon>201805042205038_SetNameOfMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805081558524_AddBirthdateToCustomer.resx">
+      <DependentUpon>201805081558524_AddBirthdateToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805081612582_UpdateMembershipType.resx">
+      <DependentUpon>201805081612582_UpdateMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805081650089_UpdateMovieAddGenre.resx">
+      <DependentUpon>201805081650089_UpdateMovieAddGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805081703183_UpdateIntForByteInIdTables.resx">
+      <DependentUpon>201805081703183_UpdateIntForByteInIdTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805081704007_Genre.resx">
+      <DependentUpon>201805081704007_Genre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805081709415_InsertMovies.resx">
+      <DependentUpon>201805081709415_InsertMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
