@@ -16,6 +16,10 @@
 }
 
 <h2>Customers</h2>
+
+@Html.ActionLink("New Customer", "New", "Customers", null, new { @class = "btn btn-primary" })
+<br/><br/>
+
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
@@ -29,7 +33,7 @@
         {
         <tr>
             <td>
-                @Html.ActionLink(customer.Name, "Show", "Customers", new { id = customer.Id }, null)
+                @Html.ActionLink(customer.Name, "Edit", "Customers", new { id = customer.Id }, null)
             </td>
             <td>
                 @customer.MembershipType.Name
