@@ -28,9 +28,9 @@ namespace Neon.Controllers
         public ActionResult New()
         {
             var genres = _context.Genre.ToList();
-            var viewModel = new MovieFormViewModel
+            var viewModel = new MovieFormViewModel()
             {
-                Genre = genres
+                Genres = genres
             };
             return View("MovieForm", viewModel);
         }
@@ -56,10 +56,9 @@ namespace Neon.Controllers
             if (movie == null)
                 return HttpNotFound();
 
-            var viewModel = new MovieFormViewModel
+            var viewModel = new MovieFormViewModel(movie)
             {
-                Movie = movie,
-                Genre = _context.Genre.ToList()
+                Genres = _context.Genre.ToList()
             };
 
             return View("MovieForm", viewModel);
@@ -76,14 +75,14 @@ namespace Neon.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Movie movie)
         {
             if (!ModelState.IsValid)
             {
-                var viewModel = new MovieFormViewModel
+                var viewModel = new MovieFormViewModel(movie)
                 {
-                    Movie = movie,
-                    Genre = _context.Genre.ToList()
+                    Genres = _context.Genre.ToList()
                 };
                 return View("MovieForm", viewModel);
             }
